@@ -80,7 +80,7 @@ function venv_info(){
 
 VENV="\$(venv_info)";
 
-#PS1="${GREENB_REDT}😺 ${GREENB_REDT}${TRIANGLE}${RESET} ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)")% "
+#this is the prompt I use to use use. Now I'm using starship
 PS1="${GREENB_REDT}😺${VENV}${RESET}${REDB_GREENT}${TRIANGLE} ${debian_chroot:+($debian_chroot)}\u@\h${RESET}${GREENB_REDT}${TRIANGLE}\W${RESET}${REDB_GREENT}${TRIANGLE}${GIT_BRANCH_NAME}${RESET}${NOB_REDT}${TRIANGLE}${RESET}"
 
 unset color_prompt force_color_prompt
@@ -173,3 +173,5 @@ export KANATA_TRAY_LOG_DIR='/home/work/.config/kanata-tray/'
 
 ## Jeff says to add this for doctest
 export CPATH=$HOME/.local/lib/gcc/include
+
+eval "$(starship init bash)"
